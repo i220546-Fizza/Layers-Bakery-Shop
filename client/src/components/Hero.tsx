@@ -18,12 +18,12 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-layers-ink">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-layers-deep">
       <div
         className="absolute inset-0 opacity-90"
         style={{
           background:
-            'radial-gradient(circle at 30% 20%, rgba(var(--layers-accent-rgb), 0.35), transparent 55%), radial-gradient(circle at 80% 80%, rgba(var(--layers-accent-rgb), 0.18), transparent 50%), var(--layers-primary)',
+            'radial-gradient(circle at 30% 20%, rgba(var(--layers-accent-rgb), 0.35), transparent 55%), radial-gradient(circle at 80% 80%, rgba(var(--layers-primary-rgb), 0.3), transparent 50%), var(--layers-deep)',
         }}
         aria-hidden="true"
       />

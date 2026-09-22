@@ -2,36 +2,41 @@
 @import "tailwindcss";
 
 /*
- * Layers Bakeshop design tokens — blue + gold theme (explicitly requested).
- * layers.pk itself is unreachable from this environment (network egress to
- * that domain is blocked), but the user supplied a screenshot of the live
- * site showing a muted khaki-gold brand mark (logo, category nav band) and
- * a soft cerulean-blue category backdrop. Blue is set here as the primary
- * interactive/brand color (buttons, active states, hero) with gold as the
- * secondary accent (badges, ratings, logo mark); body text stays a neutral
- * near-black for readability. Centralized here so every surface (nav, cart,
- * checkout, admin, 3D scene) draws from the same source of truth.
+ * Layers Bakeshop design tokens — exact blue + gold palette, supplied
+ * directly by the project owner (layers.pk itself stays unreachable from
+ * this environment). Mapped as: light blue is the recognizable "brand"
+ * tone used across large surfaces (hero, logo, gradients); deep blue is
+ * the higher-contrast interactive color for buttons/active states/hover
+ * (light blue behind white button text fails contrast, so the two are
+ * swapped from a literal "primary = lightest swatch" reading); gold and
+ * champagne-gold are the accent pair; charcoal is body text; cream and
+ * soft-blue are the two alternating warm/cool section backgrounds; dark
+ * chocolate is reserved for the "premium/dessert" dark sections (hero,
+ * footer). Centralized here so every surface (nav, cart, checkout, admin,
+ * 3D scene) draws from the same source of truth.
  */
 :root {
-  --layers-primary: #1e6e8c;       /* deep cerulean blue — buttons, active states, links */
-  --layers-primary-hover: #14536b; /* darker blue hover/active */
-  --layers-primary-light: #8fd2e6; /* soft sky blue — tints, gradients, hero glow */
-  --layers-primary-rgb: 30, 110, 140;
-  --layers-ink: #16181a;           /* near-black — primary text */
-  --layers-ink-soft: #4a4f52;      /* secondary text */
-  --layers-muted: #868c8f;         /* tertiary text, placeholders */
-  --layers-background: #f5f7f8;    /* page background — soft cool off-white */
-  --layers-surface: #ffffff;       /* cards, panels */
-  --layers-surface-alt: #e9f3f7;   /* alternate section background — light blue tint */
-  --layers-accent: #a8895c;        /* khaki-gold — logo, badges, ratings */
-  --layers-accent-soft: #e6dcc4;   /* light gold — subtle fills */
-  --layers-accent-hover: #8a6f47;  /* gold hover */
-  --layers-accent-rgb: 168, 137, 92;
-  --layers-border: #dce4e7;        /* card/section borders — light blue-gray */
+  --layers-primary: #5fa9c2;        /* deep blue — buttons, active states, links */
+  --layers-primary-hover: #4c879b;  /* darker blue hover/active */
+  --layers-primary-light: #a9d8e8;  /* light blue — main brand color, hero/logo/gradients */
+  --layers-primary-rgb: 95, 169, 194;
+  --layers-ink: #242424;            /* charcoal — text */
+  --layers-ink-soft: #55524f;       /* secondary text */
+  --layers-muted: #8a8580;          /* tertiary text, placeholders */
+  --layers-background: #ffffff;     /* page background — white */
+  --layers-surface: #ffffff;        /* cards, panels */
+  --layers-surface-alt: #faf7f0;    /* cream — warm alternating section background */
+  --layers-surface-cool: #ddf2f7;   /* soft blue — cool alternating section background */
+  --layers-deep: #3a2925;           /* dark chocolate — premium/dessert sections (hero, footer) */
+  --layers-accent: #c9a24d;         /* gold — primary gold accents */
+  --layers-accent-soft: #d8bd78;    /* champagne gold — softer highlights */
+  --layers-accent-hover: #a1823e;   /* darker gold hover */
+  --layers-accent-rgb: 201, 162, 77;
+  --layers-border: #e6e3dd;         /* card/section borders */
   --layers-success: #4c7a5b;
   --layers-warning: #c67c2e;
   --layers-error: #b3372c;
-  --layers-overlay: rgba(22, 24, 26, 0.6);
+  --layers-overlay: rgba(36, 36, 36, 0.6);
 
   --font-display: 'Fraunces', 'Georgia', serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -47,6 +52,8 @@
   --color-layers-background: var(--layers-background);
   --color-layers-surface: var(--layers-surface);
   --color-layers-surface-alt: var(--layers-surface-alt);
+  --color-layers-surface-cool: var(--layers-surface-cool);
+  --color-layers-deep: var(--layers-deep);
   --color-layers-accent: var(--layers-accent);
   --color-layers-accent-soft: var(--layers-accent-soft);
   --color-layers-accent-hover: var(--layers-accent-hover);

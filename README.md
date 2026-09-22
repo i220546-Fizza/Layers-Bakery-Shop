@@ -2,7 +2,7 @@
 
 A full-stack, production-quality e-commerce website for **Layers Bakeshop** — a premium Pakistani dessert brand. Built with React + TypeScript + Vite + Tailwind CSS + Three.js/React Three Fiber + Framer Motion on the frontend, and Node.js + Express + MongoDB (Mongoose) on the backend.
 
-> **On the brand identity:** `layers.pk` is not reachable from this environment (network egress to that domain is blocked — confirmed via an HTTP fetch tool, `curl`, and the Wayback Machine archive), so the palette couldn't be scraped from the live site's CSS. A screenshot of the real site (supplied by the project owner) showed a muted khaki-gold accent (logo, category nav band) and a soft cerulean-blue category backdrop; per explicit direction the site now runs a **blue + gold theme** — deep blue as the primary interactive/brand color (buttons, active states, hero), gold as the secondary accent (badges, ratings, logo mark), with a neutral near-black kept for body text readability. Centralized in one place (`client/src/index.css` + `client/src/utils/colors.ts`) so it can be refined further anytime.
+> **On the brand identity:** `layers.pk` is not reachable from this environment (network egress to that domain is blocked — confirmed via an HTTP fetch tool, `curl`, and the Wayback Machine archive), so the palette couldn't be scraped from the live site's CSS. The **blue + gold theme** below was instead supplied directly by the project owner as an exact hex palette (see the table in [§2](#2-design-system)) and mapped one-to-one into the design tokens. One deliberate deviation from a literal reading: "main brand color" (light blue, `#A9D8E8`) is used for large surfaces/gradients rather than small button fills, because white text on that light a blue fails contrast — the deeper blue (`#5FA9C2`, listed as "hover/secondary") is used as the actual interactive/button color instead, which is both more accessible and matches how a hover-state color is normally the *darker* variant of a lighter brand tone.
 >
 > **On imagery:** for the same reason, external stock-photo hosts are unreachable from this environment. All product/gallery imagery is generated as original SVG illustrations in the brand palette (see `scripts/generate-product-art.mjs`) rather than fetched or faked with broken links. Swap files in `client/public/images/products/` with real photography any time — nothing else needs to change.
 
@@ -45,13 +45,15 @@ All brand tokens live in `client/src/index.css` as CSS custom properties, mirror
 
 | Token | Hex | Used for |
 |---|---|---|
-| `--layers-primary` | `#1e6e8c` | Buttons, active states, links (deep cerulean blue) |
-| `--layers-primary-light` | `#8fd2e6` | Gradients, hero glow, 3D cake mid-tier (soft sky blue) |
-| `--layers-accent` | `#a8895c` | Logo, badges, ratings, hero sparkles (khaki-gold) |
-| `--layers-ink` | `#16181a` | Primary text (neutral near-black, for readability) |
-| `--layers-background` | `#f5f7f8` | Page background (soft cool off-white) |
-| `--layers-surface` | `#ffffff` | Cards, panels, modals |
-| `--layers-surface-alt` | `#e9f3f7` | Alternate section background (light blue tint) |
+| `--layers-primary` | `#5fa9c2` | Deep blue — buttons, active states, links, hover |
+| `--layers-primary-light` | `#a9d8e8` | Light blue — main brand color; hero/logo/gradients, 3D cake mid-tier |
+| `--layers-accent` | `#c9a24d` | Gold — primary gold accents (badges, ratings, logo mark) |
+| `--layers-accent-soft` | `#d8bd78` | Champagne gold — softer highlights |
+| `--layers-ink` | `#242424` | Charcoal — body text |
+| `--layers-background` / `--layers-surface` | `#ffffff` | White — page background, cards, panels |
+| `--layers-surface-alt` | `#faf7f0` | Cream — warm alternating section background |
+| `--layers-surface-cool` | `#ddf2f7` | Soft blue — cool alternating section background |
+| `--layers-deep` | `#3a2925` | Dark chocolate — premium/dessert sections (hero, footer) |
 | `--layers-success` / `--layers-warning` / `--layers-error` | muted green / amber / red | Order status, form validation |
 
 Typography: **Fraunces** (elegant serif) for headings/display text, **Inter** for body copy — loaded via Google Fonts in `index.css`.

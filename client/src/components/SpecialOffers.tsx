@@ -28,7 +28,8 @@ const offers = [
 
 export default function SpecialOffers() {
   return (
-    <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+    <section className="bg-layers-surface-cool py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
       <Reveal>
         <p className="layers-eyebrow">Right Now</p>
         <h2 className="mt-3 font-display text-4xl text-layers-ink sm:text-5xl">Special Offers</h2>
@@ -54,6 +55,7 @@ export default function SpecialOffers() {
             </Link>
           </Reveal>
         ))}
+      </div>
       </div>
     </section>
   );
