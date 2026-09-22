@@ -51,9 +51,8 @@ const productSchema = new mongoose.Schema(
 
 productSchema.index({ name: 'text', description: 'text' });
 
-productSchema.pre('validate', function ensureAvailability(next) {
+productSchema.pre('validate', function ensureAvailability() {
   if (this.stock === 0) this.isAvailable = false;
-  next();
 });
 
 export const PRODUCT_CATEGORIES = CATEGORIES;
