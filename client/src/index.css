@@ -2,35 +2,36 @@
 @import "tailwindcss";
 
 /*
- * Layers Bakeshop design tokens.
+ * Layers Bakeshop design tokens — blue + gold theme (explicitly requested).
  * layers.pk itself is unreachable from this environment (network egress to
  * that domain is blocked), but the user supplied a screenshot of the live
- * site — these values are read directly off it: a muted khaki-gold brand
- * mark/accent, near-black text and icons (not brown), and a clean white /
- * light-gray ground, rather than the burgundy-cream guess used previously.
- * Centralized here so every surface (nav, cart, checkout, admin, 3D scene)
- * draws from the same source of truth.
+ * site showing a muted khaki-gold brand mark (logo, category nav band) and
+ * a soft cerulean-blue category backdrop. Blue is set here as the primary
+ * interactive/brand color (buttons, active states, hero) with gold as the
+ * secondary accent (badges, ratings, logo mark); body text stays a neutral
+ * near-black for readability. Centralized here so every surface (nav, cart,
+ * checkout, admin, 3D scene) draws from the same source of truth.
  */
 :root {
-  --layers-primary: #141414;       /* near-black — buttons, active states, icons */
-  --layers-primary-hover: #000000; /* black hover/active */
-  --layers-primary-light: #2e2e2e; /* charcoal — tints, gradients */
-  --layers-primary-rgb: 20, 20, 20;
-  --layers-ink: #141414;           /* near-black — primary text */
-  --layers-ink-soft: #4a4a4a;      /* secondary text */
-  --layers-muted: #8a8a86;         /* tertiary text, placeholders */
-  --layers-background: #f6f5f2;    /* page background — soft off-white */
+  --layers-primary: #1e6e8c;       /* deep cerulean blue — buttons, active states, links */
+  --layers-primary-hover: #14536b; /* darker blue hover/active */
+  --layers-primary-light: #8fd2e6; /* soft sky blue — tints, gradients, hero glow */
+  --layers-primary-rgb: 30, 110, 140;
+  --layers-ink: #16181a;           /* near-black — primary text */
+  --layers-ink-soft: #4a4f52;      /* secondary text */
+  --layers-muted: #868c8f;         /* tertiary text, placeholders */
+  --layers-background: #f5f7f8;    /* page background — soft cool off-white */
   --layers-surface: #ffffff;       /* cards, panels */
-  --layers-surface-alt: #efe8d8;   /* alternate section background — light khaki */
-  --layers-accent: #a8895c;        /* khaki-gold — logo, nav band, badges */
+  --layers-surface-alt: #e9f3f7;   /* alternate section background — light blue tint */
+  --layers-accent: #a8895c;        /* khaki-gold — logo, badges, ratings */
   --layers-accent-soft: #e6dcc4;   /* light gold — subtle fills */
   --layers-accent-hover: #8a6f47;  /* gold hover */
   --layers-accent-rgb: 168, 137, 92;
-  --layers-border: #e3e0d9;        /* card/section borders */
+  --layers-border: #dce4e7;        /* card/section borders — light blue-gray */
   --layers-success: #4c7a5b;
   --layers-warning: #c67c2e;
   --layers-error: #b3372c;
-  --layers-overlay: rgba(20, 20, 20, 0.6);
+  --layers-overlay: rgba(22, 24, 26, 0.6);
 
   --font-display: 'Fraunces', 'Georgia', serif;
   --font-body: 'Inter', system-ui, sans-serif;

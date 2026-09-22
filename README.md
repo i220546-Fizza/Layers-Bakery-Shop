@@ -2,7 +2,7 @@
 
 A full-stack, production-quality e-commerce website for **Layers Bakeshop** — a premium Pakistani dessert brand. Built with React + TypeScript + Vite + Tailwind CSS + Three.js/React Three Fiber + Framer Motion on the frontend, and Node.js + Express + MongoDB (Mongoose) on the backend.
 
-> **On the brand identity:** `layers.pk` is not reachable from this environment (network egress to that domain is blocked — confirmed via an HTTP fetch tool, `curl`, and the Wayback Machine archive), so the palette couldn't be scraped from the live site's CSS. The colors below were instead read directly off a screenshot of the real site, supplied by the project owner: a muted khaki-gold accent (logo, category nav band), near-black for text/icons, and a clean white/light-gray ground. Centralized in one place (`client/src/index.css` + `client/src/utils/colors.ts`) so it can be refined further with more reference screenshots or real hex values anytime.
+> **On the brand identity:** `layers.pk` is not reachable from this environment (network egress to that domain is blocked — confirmed via an HTTP fetch tool, `curl`, and the Wayback Machine archive), so the palette couldn't be scraped from the live site's CSS. A screenshot of the real site (supplied by the project owner) showed a muted khaki-gold accent (logo, category nav band) and a soft cerulean-blue category backdrop; per explicit direction the site now runs a **blue + gold theme** — deep blue as the primary interactive/brand color (buttons, active states, hero), gold as the secondary accent (badges, ratings, logo mark), with a neutral near-black kept for body text readability. Centralized in one place (`client/src/index.css` + `client/src/utils/colors.ts`) so it can be refined further anytime.
 >
 > **On imagery:** for the same reason, external stock-photo hosts are unreachable from this environment. All product/gallery imagery is generated as original SVG illustrations in the brand palette (see `scripts/generate-product-art.mjs`) rather than fetched or faked with broken links. Swap files in `client/public/images/products/` with real photography any time — nothing else needs to change.
 
@@ -45,12 +45,13 @@ All brand tokens live in `client/src/index.css` as CSS custom properties, mirror
 
 | Token | Hex | Used for |
 |---|---|---|
-| `--layers-primary` | `#141414` | Buttons, active states, primary text, icons (near-black) |
-| `--layers-accent` | `#a8895c` | Logo, category nav band, badges, ratings, hero glow (khaki-gold) |
-| `--layers-ink` | `#141414` | Primary text |
-| `--layers-background` | `#f6f5f2` | Page background (soft off-white) |
+| `--layers-primary` | `#1e6e8c` | Buttons, active states, links (deep cerulean blue) |
+| `--layers-primary-light` | `#8fd2e6` | Gradients, hero glow, 3D cake mid-tier (soft sky blue) |
+| `--layers-accent` | `#a8895c` | Logo, badges, ratings, hero sparkles (khaki-gold) |
+| `--layers-ink` | `#16181a` | Primary text (neutral near-black, for readability) |
+| `--layers-background` | `#f5f7f8` | Page background (soft cool off-white) |
 | `--layers-surface` | `#ffffff` | Cards, panels, modals |
-| `--layers-surface-alt` | `#efe8d8` | Alternate section background (light khaki) |
+| `--layers-surface-alt` | `#e9f3f7` | Alternate section background (light blue tint) |
 | `--layers-success` / `--layers-warning` / `--layers-error` | muted green / amber / red | Order status, form validation |
 
 Typography: **Fraunces** (elegant serif) for headings/display text, **Inter** for body copy — loaded via Google Fonts in `index.css`.
