@@ -3,31 +3,34 @@
 
 /*
  * Layers Bakeshop design tokens.
- * layers.pk could not be inspected directly (network egress to that domain is
- * blocked in this environment), so this is an original palette built to match
- * the brand's documented premium-dessert feel: deep burgundy + warm gold on a
- * soft cream ground, rather than a scraped/copied value set. Centralized here
- * so every surface (nav, cart, checkout, admin, 3D scene) draws from the same
- * source of truth.
+ * layers.pk itself is unreachable from this environment (network egress to
+ * that domain is blocked), but the user supplied a screenshot of the live
+ * site — these values are read directly off it: a muted khaki-gold brand
+ * mark/accent, near-black text and icons (not brown), and a clean white /
+ * light-gray ground, rather than the burgundy-cream guess used previously.
+ * Centralized here so every surface (nav, cart, checkout, admin, 3D scene)
+ * draws from the same source of truth.
  */
 :root {
-  --layers-primary: #6e1e2c;       /* burgundy — CTAs, brand marks */
-  --layers-primary-hover: #591723; /* burgundy hover/active */
-  --layers-primary-light: #8c3341; /* tints, gradients */
-  --layers-ink: #2b1b14;           /* espresso — primary text */
-  --layers-ink-soft: #5a4a3f;      /* secondary text */
-  --layers-muted: #8a7a6d;         /* tertiary text, placeholders */
-  --layers-background: #fbf7f1;    /* page background — warm cream */
+  --layers-primary: #141414;       /* near-black — buttons, active states, icons */
+  --layers-primary-hover: #000000; /* black hover/active */
+  --layers-primary-light: #2e2e2e; /* charcoal — tints, gradients */
+  --layers-primary-rgb: 20, 20, 20;
+  --layers-ink: #141414;           /* near-black — primary text */
+  --layers-ink-soft: #4a4a4a;      /* secondary text */
+  --layers-muted: #8a8a86;         /* tertiary text, placeholders */
+  --layers-background: #f6f5f2;    /* page background — soft off-white */
   --layers-surface: #ffffff;       /* cards, panels */
-  --layers-surface-alt: #f4ecdf;   /* alternate section background */
-  --layers-accent: #c9a24b;        /* gold — accents, icons, borders */
-  --layers-accent-soft: #ecdcb2;   /* light gold — subtle fills */
-  --layers-accent-hover: #b38a36;  /* gold hover */
-  --layers-border: #e7ddd0;        /* card/section borders */
+  --layers-surface-alt: #efe8d8;   /* alternate section background — light khaki */
+  --layers-accent: #a8895c;        /* khaki-gold — logo, nav band, badges */
+  --layers-accent-soft: #e6dcc4;   /* light gold — subtle fills */
+  --layers-accent-hover: #8a6f47;  /* gold hover */
+  --layers-accent-rgb: 168, 137, 92;
+  --layers-border: #e3e0d9;        /* card/section borders */
   --layers-success: #4c7a5b;
   --layers-warning: #c67c2e;
   --layers-error: #b3372c;
-  --layers-overlay: rgba(43, 27, 20, 0.6);
+  --layers-overlay: rgba(20, 20, 20, 0.6);
 
   --font-display: 'Fraunces', 'Georgia', serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -50,6 +53,7 @@
   --color-layers-success: var(--layers-success);
   --color-layers-warning: var(--layers-warning);
   --color-layers-error: var(--layers-error);
+  --color-layers-overlay: var(--layers-overlay);
 
   --font-family-display: var(--font-display);
   --font-family-body: var(--font-body);

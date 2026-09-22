@@ -2,7 +2,7 @@
 
 A full-stack, production-quality e-commerce website for **Layers Bakeshop** — a premium Pakistani dessert brand. Built with React + TypeScript + Vite + Tailwind CSS + Three.js/React Three Fiber + Framer Motion on the frontend, and Node.js + Express + MongoDB (Mongoose) on the backend.
 
-> **On the brand identity:** `layers.pk` could not be inspected directly — this environment's network egress policy blocks that domain (confirmed via both an HTTP fetch tool and `curl`, both returned "blocked"/403). So the color system below is an **original palette built to match Layers' documented premium-dessert brand feel** (deep burgundy + warm gold on soft cream), not scraped/copied values. It's centralized in one place (`client/src/index.css` + `client/src/utils/colors.ts`) so real brand hex codes can be swapped in in minutes if you have them.
+> **On the brand identity:** `layers.pk` is not reachable from this environment (network egress to that domain is blocked — confirmed via an HTTP fetch tool, `curl`, and the Wayback Machine archive), so the palette couldn't be scraped from the live site's CSS. The colors below were instead read directly off a screenshot of the real site, supplied by the project owner: a muted khaki-gold accent (logo, category nav band), near-black for text/icons, and a clean white/light-gray ground. Centralized in one place (`client/src/index.css` + `client/src/utils/colors.ts`) so it can be refined further with more reference screenshots or real hex values anytime.
 >
 > **On imagery:** for the same reason, external stock-photo hosts are unreachable from this environment. All product/gallery imagery is generated as original SVG illustrations in the brand palette (see `scripts/generate-product-art.mjs`) rather than fetched or faked with broken links. Swap files in `client/public/images/products/` with real photography any time — nothing else needs to change.
 
@@ -45,11 +45,12 @@ All brand tokens live in `client/src/index.css` as CSS custom properties, mirror
 
 | Token | Hex | Used for |
 |---|---|---|
-| `--layers-primary` | `#6e1e2c` | Buttons, links, brand accents (deep burgundy) |
-| `--layers-accent` | `#c9a24b` | Gold accents, badges, ratings, hero sparkles |
-| `--layers-ink` | `#2b1b14` | Primary text, footer background, hero background |
-| `--layers-background` | `#fbf7f1` | Page background (warm cream) |
+| `--layers-primary` | `#141414` | Buttons, active states, primary text, icons (near-black) |
+| `--layers-accent` | `#a8895c` | Logo, category nav band, badges, ratings, hero glow (khaki-gold) |
+| `--layers-ink` | `#141414` | Primary text |
+| `--layers-background` | `#f6f5f2` | Page background (soft off-white) |
 | `--layers-surface` | `#ffffff` | Cards, panels, modals |
+| `--layers-surface-alt` | `#efe8d8` | Alternate section background (light khaki) |
 | `--layers-success` / `--layers-warning` / `--layers-error` | muted green / amber / red | Order status, form validation |
 
 Typography: **Fraunces** (elegant serif) for headings/display text, **Inter** for body copy — loaded via Google Fonts in `index.css`.

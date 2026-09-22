@@ -8,21 +8,21 @@ const offers = [
     title: 'Autumn Spice Collection',
     desc: 'Cinnamon, caramel and roasted pecan flavours, here for a limited season.',
     to: '/menu?tag=new',
-    bg: 'linear-gradient(135deg, #6e1e2c, #8c3341)',
+    bg: 'linear-gradient(135deg, var(--layers-primary-light), var(--layers-accent))',
   },
   {
     label: 'Best Sellers',
     title: 'The Velvet Signature',
     desc: 'Our most-loved red velvet, now available in cake, cupcake and sundae form.',
     to: '/menu?tag=bestseller',
-    bg: 'linear-gradient(135deg, #2b1b14, #5a4a3f)',
+    bg: 'linear-gradient(135deg, var(--layers-primary), var(--layers-primary-light))',
   },
   {
     label: 'Limited Edition',
     title: "Baker's Table",
     desc: 'Small-batch flavours crafted with our pastry chef — while stocks last.',
     to: '/menu?tag=limited',
-    bg: 'linear-gradient(135deg, #b38a36, #c9a24b)',
+    bg: 'linear-gradient(135deg, var(--layers-accent-hover), var(--layers-accent))',
   },
 ];
 

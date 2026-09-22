@@ -9,7 +9,7 @@ export default function CtaBanner() {
     <section className="relative overflow-hidden bg-layers-primary py-20 text-center text-white md:py-28">
       <div
         className="absolute inset-0 opacity-40"
-        style={{ background: 'radial-gradient(circle at 20% 30%, rgba(201,162,75,0.4), transparent 55%)' }}
+        style={{ background: 'radial-gradient(circle at 20% 30%, rgba(var(--layers-accent-rgb), 0.4), transparent 55%)' }}
         aria-hidden="true"
       />
       <div className="relative mx-auto max-w-2xl px-5">

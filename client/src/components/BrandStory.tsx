@@ -23,7 +23,7 @@ export default function BrandStory() {
               className="h-full w-full"
               style={{
                 background:
-                  'linear-gradient(160deg, #8c3341 0%, #6e1e2c 45%, #2b1b14 100%)',
+                  'linear-gradient(160deg, var(--layers-accent) 0%, var(--layers-primary-light) 45%, var(--layers-primary) 100%)',
               }}
             />
           </div>

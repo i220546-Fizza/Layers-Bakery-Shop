@@ -28,7 +28,7 @@ export default function About() {
         <Reveal>
           <div
             className="aspect-[21/9] w-full rounded-[2rem]"
-            style={{ background: 'linear-gradient(120deg, #6e1e2c, #2b1b14 60%, #c9a24b)' }}
+            style={{ background: 'linear-gradient(120deg, var(--layers-primary-light), var(--layers-primary) 60%, var(--layers-accent))' }}
           />
         </Reveal>
       </div>

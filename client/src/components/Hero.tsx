@@ -23,7 +23,7 @@ export default function Hero() {
         className="absolute inset-0 opacity-90"
         style={{
           background:
-            'radial-gradient(circle at 30% 20%, rgba(140,51,65,0.55), transparent 55%), radial-gradient(circle at 80% 80%, rgba(201,162,75,0.25), transparent 50%), #2b1b14',
+            'radial-gradient(circle at 30% 20%, rgba(var(--layers-accent-rgb), 0.35), transparent 55%), radial-gradient(circle at 80% 80%, rgba(var(--layers-accent-rgb), 0.18), transparent 50%), var(--layers-primary)',
         }}
         aria-hidden="true"
       />

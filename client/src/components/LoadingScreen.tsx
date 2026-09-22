@@ -1,13 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { layersColors } from '../utils/colors';
 
 interface LoadingScreenProps {
   isLoading: boolean;
 }
 
 const layers = [
-  { color: '#6e1e2c', width: 64 },
-  { color: '#8c3341', width: 84 },
-  { color: '#c9a24b', width: 104 },
+  { color: layersColors.primary, width: 64 },
+  { color: layersColors.primaryLight, width: 84 },
+  { color: layersColors.accent, width: 104 },
 ];
 
 export default function LoadingScreen({ isLoading }: LoadingScreenProps) {

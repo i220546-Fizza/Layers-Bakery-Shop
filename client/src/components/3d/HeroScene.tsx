@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { ContactShadows, Environment } from '@react-three/drei';
 import CakeModel from './CakeModel';
 import Crumbs from './Crumbs';
+import { layersColors } from '../../utils/colors';
 
 interface HeroSceneProps {
   reduceMotion: boolean;
@@ -18,7 +19,7 @@ export default function HeroScene({ reduceMotion }: HeroSceneProps) {
     >
       <ambientLight intensity={0.65} />
       <directionalLight position={[4, 5, 3]} intensity={1.1} castShadow shadow-mapSize={[1024, 1024]} />
-      <pointLight position={[-4, 2, -2]} intensity={0.4} color="#c9a24b" />
+      <pointLight position={[-4, 2, -2]} intensity={0.4} color={layersColors.accent} />
 
       <Suspense fallback={null}>
         <CakeModel reduceMotion={reduceMotion} />

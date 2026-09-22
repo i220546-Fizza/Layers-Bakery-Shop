@@ -10,21 +10,26 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, '../client/public/images/products');
 mkdirSync(OUT_DIR, { recursive: true });
 
+// Brand chrome (nav/buttons/text) is near-black + khaki-gold — see
+// client/src/index.css — but that reads as flat/monochrome when used as
+// the *food* illustration palette. These tones stay food-appropriate
+// (chocolate/caramel/cream) while still using the brand gold as the one
+// recurring accent, so the generated art still feels on-brand.
 const palette = {
-  primary: '#6e1e2c',
-  primaryLight: '#8c3341',
-  ink: '#2b1b14',
-  accent: '#c9a24b',
-  accentSoft: '#ecdcb2',
-  cream: '#fbf7f1',
+  chocolateDark: '#3d2a1c',
+  chocolateMid: '#6b4226',
+  espresso: '#2a1d14',
+  accent: '#a8895c', // brand khaki-gold — matches --layers-accent
+  accentSoft: '#e6dcc4', // matches --layers-accent-soft
+  cream: '#f6f5f2', // matches --layers-background
   white: '#ffffff',
 };
 
 const bgVariants = [
-  `linear-gradient(160deg, ${palette.primary}, ${palette.ink})`,
-  `linear-gradient(160deg, ${palette.primaryLight}, ${palette.primary})`,
-  `linear-gradient(160deg, ${palette.accent}, ${palette.primary})`,
-  `linear-gradient(160deg, ${palette.ink}, #5a4a3f)`,
+  `linear-gradient(160deg, ${palette.chocolateMid}, ${palette.espresso})`,
+  `linear-gradient(160deg, ${palette.chocolateDark}, ${palette.chocolateMid})`,
+  `linear-gradient(160deg, ${palette.accent}, ${palette.chocolateDark})`,
+  `linear-gradient(160deg, ${palette.espresso}, ${palette.chocolateDark})`,
 ];
 
 function svgBg(gradient, id) {
@@ -116,10 +121,10 @@ const products = [
 ];
 
 const shades = [
-  [palette.primary, palette.primaryLight, palette.ink],
-  [palette.primaryLight, palette.accent, palette.primary],
-  [palette.ink, palette.primary, palette.accentSoft],
-  [palette.accent, palette.ink, palette.primaryLight],
+  [palette.chocolateMid, palette.chocolateDark, palette.espresso],
+  [palette.chocolateDark, palette.accent, palette.chocolateMid],
+  [palette.espresso, palette.chocolateMid, palette.accentSoft],
+  [palette.accent, palette.espresso, palette.chocolateDark],
 ];
 
 products.forEach(([type, variant], i) => {
